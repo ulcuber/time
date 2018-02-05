@@ -1,0 +1,6 @@
+AuthType Basic
+AuthName "Access is Denied. Enter password"
+AuthUserFile /home/victor/sites/college/time/admin/.htpasswd
+<Limit GET POST>
+Require valid-user
+</Limit>
