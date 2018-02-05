@@ -7,11 +7,11 @@
                 <nav class="maian_mnu2 clearfix">
                     <ul>
                 <li class="active"><a href="index.html">Главная</a></li>
-                <li><a href="tovar.html">Розничные цены</a></li>
-                <li><a href="onas.html">О нас</a></li>
-                <li><a href="foto.html">Фото</a></li>
-                <li><a href="garant.html">Расширенная гарантия</a></li>
-                <li><a href="kontakt.html">Контакты</a></li>
+                <li><a href="products.php">Розничные цены</a></li>
+                <li><a href="about.php">О нас</a></li>
+                <li><a href="photo.php">Фото</a></li>
+                <li><a href="garant.php">Расширенная гарантия</a></li>
+                <li><a href="contact.php">Контакты</a></li>
                     </ul>
                 </nav>
             </div>
@@ -20,5 +20,5 @@
     </div>
 </footer>
 
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>

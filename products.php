@@ -38,7 +38,7 @@ $products = mysqli_query($db, $sql) ?: [];
                                 <a class="button_price"> <?=$product['g_price']?> Р
                                     <span>+</span> <span>Расширенная гарантия</span>
                                 </a>
-                                <a id="zzz" href="#ggg">О гарантии</a>
+                                <a id="zzz" href="javascript:void(null);">О гарантии</a>
                                 <a class="button_price"><?=$product['price']?> Р</a>
                             </div>
                         </div>

@@ -13,11 +13,11 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img src="img/kw18_rus.jpg" alt="">
+                <img src="/img/kw18_rus.jpg" alt="">
 
             </div>
             <div class="item">
-                <img src="img/gv08_rus.jpg" alt="">
+                <img src="/img/gv08_rus.jpg" alt="">
 
 
             </div>
