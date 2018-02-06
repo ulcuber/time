@@ -42,6 +42,22 @@ function update(mysqli $db, string $table, array $item)
     return mysqli_query($db, $sql);
 }
 
+function insert(mysqli $db, string $table, array $item)
+{
+    $keys = [];
+    $values = [];
+    foreach ($item as $key => $value) {
+        $keys[] = wrapColumn($db, $key);
+        $values[] = wrapValue($db, $value);
+    }
+    $table = wrapColumn($db, $table);
+
+    $sql = "INSERT INTO " . $table . " (" . implode(", ", $keys) .
+        ") VALUES (". implode(", ", $values) . ")";
+
+    return mysqli_query($db, $sql);
+}
+
 function wrapColumn(mysqli $db, string $column)
 {
     return '`' . mysqli_real_escape_string($db, $column) . '`';
@@ -57,7 +73,7 @@ function wrapValue(mysqli $db, $value)
 
 function saveFile(string $inputName)
 {
-    if (!isset($_FILES[$inputName])) {
+    if (!isset($_FILES[$inputName]) || !isset($_FILES[$inputName]['name'])) {
         return;
     }
 

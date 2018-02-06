@@ -1,16 +1,5 @@
 <?php
-$db = require_once '../inc/db.php';
 require_once '../inc/helpers.php';
-if (!isset($_REQUEST['id'])) {
-    exit('Не задан id');
-}
-$id = (int) $_REQUEST['id'];
-$sql = "SELECT * FROM products WHERE `id` = " . $id . " LIMIT 1";
-$result = mysqli_query($db, $sql);
-$product = $result ? $result->fetch_assoc() : false;
-if (!$product) {
-    exit('Товар не найден');
-}
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -38,43 +27,37 @@ if (!$product) {
 
 <form class="form-horizontal"
     method="POST"
-    action="<?=url('admin/update.php')?>"
+    action="<?=url('admin/save.php')?>"
     enctype="multipart/form-data">
-    <input type="hidden" name="id" value="<?=$product['id']?>">
     <div class="panel-body">
         <div class="form-group">
             <label for="name" class="col-md-3 control-label">Название</label>
             <div class="col-md-9">
-                <input id="name" type="text" class="form-control" name="name" value="<?=$product['name']?>" required>
+                <input id="name" type="text" class="form-control" name="name" required>
             </div>
         </div>
         <div class="form-group">
             <label for="price" class="col-md-3 control-label">Цена</label>
             <div class="col-md-9">
-                <input id="price" type="text" class="form-control" name="price" value="<?=$product['price']?>" required>
+                <input id="price" type="text" class="form-control" name="price" required>
             </div>
         </div>
         <div class="form-group">
             <label for="g_price" class="col-md-3 control-label">Цена с гарантией</label>
             <div class="col-md-9">
-                <input id="g_price" type="text" class="form-control" name="g_price" value="<?=$product['g_price']?>" required>
+                <input id="g_price" type="text" class="form-control" name="g_price" required>
             </div>
         </div>
         <div class="form-group">
             <label for="description" class="col-md-3 control-label">Описание</label>
             <div class="col-md-9">
-                <textarea id="description" name="description" class="form-control" rows="6" required><?=$product['description']?></textarea>
+                <textarea id="description" name="description" class="form-control" rows="6" required></textarea>
             </div>
         </div>
         <div class="form-group">
-            <label for="img" class="col-md-3 control-label">Картинка (если не выбрать, останется старая)</label>
+            <label for="img" class="col-md-3 control-label">Картинка</label>
             <div class="col-md-3">
-                <input id="img" type="file" name="img">
-            </div>
-
-            <label class="col-md-3 control-label">Текущая картинка</label>
-            <div class="col-md-3">
-                <img class="img-responsive" src="<?=url('img/products/' . $product['img'])?>" alt="<?=$product['name']?>">
+                <input id="img" type="file" name="img" required>
             </div>
         </div>
         <div class="btn-group" role="group" aria-label="...">

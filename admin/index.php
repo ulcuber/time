@@ -27,7 +27,13 @@ $products = mysqli_query($db, $sql) ?: [];
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel panel-default table-responsive">
-                        <div class="panel-heading">Товары</div>
+                        <div class="panel-heading">Товары
+                            <a
+                                class="btn btn-xs btn-success pull-right"
+                                href="<?=url('admin/create.php')?>">
+                                Создать
+                            </a>
+                        </div>
 
 <table class="table table-condensed table-striped table-hover">
     <thead>
