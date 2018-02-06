@@ -5,7 +5,7 @@ require_once '../inc/helpers.php';
 <html lang="ru">
 <head>
     <meta charset="utf-8" />
-    <title>Редактировать</title>
+    <title>Создать</title>
     <meta name="description" content="Умные часы" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,7 +23,7 @@ require_once '../inc/helpers.php';
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel panel-default table-responsive">
-                        <div class="panel-heading">Редактировать товар #<?=$product['id']?></div>
+                        <div class="panel-heading">Создать товар</div>
 
 <form class="form-horizontal"
     method="POST"

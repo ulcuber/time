@@ -33,7 +33,7 @@ $products = mysqli_query($db, $sql) ?: [];
                     <div class="col-md-3">
                         <div class="product_n">
                             <div class="product_naz"><?=$product['name']?></div>
-                            <img src="<?=url('img/products/' . $product['img'])?>" alt="<?=$product['name']?>">
+                            <img class="img-responsive" src="<?=url('img/products/' . $product['img'])?>" alt="<?=$product['name']?>">
                             <div class="product_opis"><?=$product['description']?></div>
                             <div class="product_price">
                                 <a class="button_price"> <?=$product['g_price']?> Р
