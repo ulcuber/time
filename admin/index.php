@@ -58,15 +58,15 @@ $products = mysqli_query($db, $sql) ?: [];
                         Редактировать
                     </a>
 
-                    <!-- <form action="<?//=url('delete.php')?>"
+                    <form action="<?=url('admin/delete.php', ['id' => $product['id']])?>"
                         method="POST"
                         style="display: inline;"
-                        onsubmit="if(confirm('Delete? Are you sure?')) {return true;} else {return false;};">
+                        onsubmit="if(confirm('Удалить? Вы уверены?')) {return true;} else {return false;};">
                         <button type="submit" class="btn btn-xs btn-danger">
-                            Delete
+                            Удалить
                         </button>
                     </form>
-                     -->
+
                 </td>
             </tr>
         <?php } ?>

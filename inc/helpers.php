@@ -58,6 +58,15 @@ function insert(mysqli $db, string $table, array $item)
     return mysqli_query($db, $sql);
 }
 
+function deleteById(mysqli $db, string $table, int $id)
+{
+    $table = wrapColumn($db, $table);
+
+    $sql = "DELETE FROM " . $table . " WHERE id = " . $id . " LIMIT 1";
+
+    return mysqli_query($db, $sql);
+}
+
 function wrapColumn(mysqli $db, string $column)
 {
     return '`' . mysqli_real_escape_string($db, $column) . '`';
