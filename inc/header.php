@@ -1,11 +1,13 @@
-<?php ?>
+<?php
+require_once 'inc/helpers.php';
+?>
 <header class="top_header">
     <div class="header_topline">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
                     <div class="header_topline_logo">
-                        <a href="/"><img src="/img/logo.jpg" alt="Умные часы">  </a>
+                        <a href="<?=url()?>"><img src="<?=url('img/logo.jpg')?>" alt="logo">  </a>
                     </div>
                 </div>
                 <div class="col-md-8">
@@ -22,11 +24,11 @@
             <div class="row">
                 <nav class="maian_mnu clearfix">
                     <ul>
-                        <li><a href="products.php">Розничные цены</a></li>
-                        <li><a href="about.php">О нас</a></li>
-                        <li><a href="photo.php">Фото</a></li>
-                        <li><a href="garant.php">Расширенная гарантия</a></li>
-                        <li><a href="contact.php">Контакты</a></li>
+                        <li><a href="<?=url('products.php')?>">Розничные цены</a></li>
+                        <li><a href="<?=url('about.php')?>">О нас</a></li>
+                        <li><a href="<?=url('photo.php')?>">Фото</a></li>
+                        <li><a href="<?=url('garant.php')?>">Расширенная гарантия</a></li>
+                        <li><a href="<?=url('contact.php')?>">Контакты</a></li>
                     </ul>
                 </nav>
             </div>
@@ -36,6 +38,6 @@
 </header>
 <section class="order">
     <div class="baner_1" id="jq2">
-        <img src="/img/kw88_rus.jpg" alt="Умные часы">
+        <img src="<?=url('img/kw88_rus.jpg')?>" alt="banner">
     </div>
 </section>

@@ -1,4 +1,6 @@
-<?php ?>
+<?php
+require_once 'inc/helpers.php';
+?>
 <section class="menu-carousel">
     <div id="carousel" class="carousel slide" data-ride="carousel">
 
@@ -13,11 +15,11 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img src="/img/kw18_rus.jpg" alt="">
+                <img src="<?=url('img/kw18_rus.jpg')?>" alt="">
 
             </div>
             <div class="item">
-                <img src="/img/gv08_rus.jpg" alt="">
+                <img src="<?=url('img/gv08_rus.jpg')?>" alt="">
 
 
             </div>

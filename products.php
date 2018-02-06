@@ -1,5 +1,6 @@
 <?php
 $db = require_once 'inc/db.php';
+require_once 'inc/helpers.php';
 $sql = "SELECT * FROM products";
 // $products = $db->query($sql) ?: [];
 $products = mysqli_query($db, $sql) ?: [];
@@ -13,9 +14,9 @@ $products = mysqli_query($db, $sql) ?: [];
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/media.css" />
+    <link href="<?=url('css/bootstrap.min.css')?>" rel="stylesheet">
+    <link rel="stylesheet" href="<?=url('css/main.css')?>" />
+    <link rel="stylesheet" href="<?=url('css/media.css')?>" />
 </head>
 <body>
 
@@ -32,7 +33,7 @@ $products = mysqli_query($db, $sql) ?: [];
                     <div class="col-md-3">
                         <div class="product_n">
                             <div class="product_naz"><?=$product['name']?></div>
-                            <img src="img/<?=$product['img']?>" alt="Умные часы">
+                            <img src="<?=url('img/' . $product['img'])?>" alt="<?=$product['name']?>">
                             <div class="product_opis"><?=$product['description']?></div>
                             <div class="product_price">
                                 <a class="button_price"> <?=$product['g_price']?> Р
