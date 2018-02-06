@@ -28,39 +28,45 @@ $products = mysqli_query($db, $sql) ?: [];
                 <div class="col-md-12">
                     <div class="panel panel-default table-responsive">
                         <div class="panel-heading">Товары</div>
-    <table class="table table-condensed table-striped table-hover">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Название</th>
-                <th>Цена</th>
-                <th class="text-right">Действия</th>
-            </tr>
-        </thead>
 
-        <tbody>
-            <?php foreach ($products as $product) { ?>
-                <tr class="{{ $status->getClass($question->status) }}">
-                    <td><?=$product['id']?></td>
-                    <td><?=$product['name']?></td>
-                    <td><?=$product['price']?></td>
-                    <td class="text-right">
-                        <a target="_blank" class="btn btn-xs btn-info" href="<?=url()?>">
-                            1
-                        </a>
-                        <a target="_blank" class="btn btn-xs btn-info" href="<?=url()?>">
-                            2
-                        </a>
-                        <form action="<?=url()?>" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) {return true;} else {return false;};">
-                            <button type="submit" class="btn btn-xs btn-danger">
-                                Delete
-                            </button>
-                        </form>
-                    </td>
-                </tr>
-            <?php } ?>
-        </tbody>
-    </table>
+<table class="table table-condensed table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Название</th>
+            <th>Цена</th>
+            <th class="text-right">Действия</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <?php foreach ($products as $product) { ?>
+            <tr>
+                <td><?=$product['id']?></td>
+                <td><?=$product['name']?></td>
+                <td><?=$product['price']?></td>
+                <td class="text-right">
+                    <a
+                        class="btn btn-xs btn-info"
+                        href="<?=url('admin/edit.php', ['id' => $product['id']])?>">
+                        Редактировать
+                    </a>
+
+                    <!-- <form action="<?//=url('delete.php')?>"
+                        method="POST"
+                        style="display: inline;"
+                        onsubmit="if(confirm('Delete? Are you sure?')) {return true;} else {return false;};">
+                        <button type="submit" class="btn btn-xs btn-danger">
+                            Delete
+                        </button>
+                    </form>
+                     -->
+                </td>
+            </tr>
+        <?php } ?>
+    </tbody>
+</table>
+
                     </div>
                 </div>
             </div>
