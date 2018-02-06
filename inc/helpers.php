@@ -1,7 +1,25 @@
 <?php
 
 define('BASE_URL', 'http://localhost/sites/college/time/');
-define('UPLOADDIR', realpath(__DIR__ . '../img/products/'));
+define('UPLOADDIR', DIRECTORY_SEPARATOR . get_absolute_path(__DIR__ . '/../img/products/') . DIRECTORY_SEPARATOR);
+
+function get_absolute_path($path)
+{
+    $path = str_replace(array('/', '\\'), DIRECTORY_SEPARATOR, $path);
+    $parts = array_filter(explode(DIRECTORY_SEPARATOR, $path), 'strlen');
+    $absolutes = array();
+    foreach ($parts as $part) {
+        if ('.' == $part) {
+            continue;
+        }
+        if ('..' == $part) {
+            array_pop($absolutes);
+        } else {
+            $absolutes[] = $part;
+        }
+    }
+    return implode(DIRECTORY_SEPARATOR, $absolutes);
+}
 
 function url(string $url = '', array $params = [])
 {
@@ -37,17 +55,40 @@ function wrapValue(mysqli $db, $value)
     return "'" . mysqli_real_escape_string($db, $value) . "'";
 }
 
-function saveFile(string $filename)
+function saveFile(string $inputName)
 {
-    if (!isset($_FILES[$filename])) {
+    if (!isset($_FILES[$inputName])) {
         return;
     }
-    $uploadfile = UPLOADDIR . basename($_FILES[$filename]['tmp_name']);
-    var_dump($uploadfile);
-    if (move_uploaded_file($_FILES[$filename]['tmp_name'], $uploadfile)) {
+
+    $filename = $_FILES[$inputName]['tmp_name'];
+
+    $maxImageSize = 1024 * 1024;
+    if (filesize($filename) > $maxImageSize) {
+        exit('Ошибка: Размер файла > 1 МБ.');
+    }
+
+    $name = $_FILES[$inputName]['name'];
+    $ext = substr($name, 1 + strrpos($name, "."));
+    $validTypes = ['gif', 'jpg', 'png', 'jpeg'];
+    if (!in_array($ext, $validTypes)) {
+        exit('Ошибка: Недопустимый тип файла.');
+    }
+
+    $name = md5(basename($name)) . '.' . $ext;
+    $uploadfile = UPLOADDIR . $name;
+    if (move_uploaded_file($filename, $uploadfile)) {
         echo "Файл корректен и был успешно загружен." . PHP_EOL;
     } else {
-        echo "Возможная атака с помощью файловой загрузки!" . PHP_EOL;
+        exit('Возможная атака с помощью файловой загрузки!');
     }
-    return $_FILES[$filename]['tmp_name'];
+    return $name;
+}
+
+function deleteFile($name)
+{
+    $uploadfile = UPLOADDIR . $name;
+    if (is_file($uploadfile)) {
+        unlink($uploadfile);
+    }
 }

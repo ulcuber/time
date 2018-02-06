@@ -74,7 +74,7 @@ if (!$product) {
 
             <label class="col-md-3 control-label">Текущая картинка</label>
             <div class="col-md-3">
-                <img class="img-responsive" src="<?=url('img/' . $product['img'])?>" alt="<?=$product['name']?>">
+                <img class="img-responsive" src="<?=url('img/products/' . $product['img'])?>" alt="<?=$product['name']?>">
             </div>
         </div>
         <div class="btn-group" role="group" aria-label="...">

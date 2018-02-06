@@ -24,7 +24,7 @@ require_once '../inc/helpers.php';
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
                 &nbsp;
-                <li><a href="<?=url()?>">None</a></li>
+                <li><a href="<?=url('admin')?>">Products</a></li>
             </ul>
 
             <!-- Right Side Of Navbar -->
