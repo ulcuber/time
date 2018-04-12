@@ -7,7 +7,7 @@ require_once 'inc/helpers.php';
             <div class="row">
                 <div class="col-md-4">
                     <div class="header_topline_logo">
-                        <a href="<?=url()?>"><img src="<?=url('img/logo.jpg')?>" alt="logo">  </a>
+                        <a href="<?=url()?>"><img src="<?=url('img/logo.png')?>" alt="logo">  </a>
                     </div>
                 </div>
                 <div class="col-md-8">
