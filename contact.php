@@ -25,9 +25,9 @@ require_once 'inc/helpers.php';
                 <div class="col-md-12">
                     <div id="ggg">
                         <h2>Контакты</h2>
-                        <li>Город Ульяновск, Ульяновский проспект 14, ТЦ Гранд</li>
+                        <li>Город Ульяновск, Ульяновский проспект 14, ТЦ Лидер</li>
                     </div>
-                    <a class="dg-widget-link" href="http://2gis.ru/ulyanovsk/firm/7741090140605394/center/48.584879,54.372855/zoom/16?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=bigMap">Посмотреть на карте Ульяновска</a><div class="dg-widget-link"><a href="http://2gis.ru/ulyanovsk/center/48.584879,54.372855/zoom/16/routeTab/rsType/bus/to/48.584879,54.372855╎Гранд, торговый центр?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=route">Найти проезд до Гранд, торговый центр</a></div><script charset="utf-8" src="https://widgets.2gis.com/js/DGWidgetLoader.js"></script><script charset="utf-8">new DGWidgetLoader({"width":640,"height":600,"borderColor":"#a3a3a3","pos":{"lat":54.372855,"lon":48.584879,"zoom":16},"opt":{"city":"ulyanovsk"},"org":[{"id":"7741090140605394"}]});</script><noscript style="color:#c00;font-size:16px;font-weight:bold;">Виджет карты использует JavaScript. Включите его в настройках вашего браузера.</noscript>
+                    <a class="dg-widget-link" href="http://2gis.ru/ulyanovsk/firm/7741090140528062/center/48.58216,54.374511/zoom/16?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=bigMap">Посмотреть на карте Ульяновска</a><div class="dg-widget-link"><a href="http://2gis.ru/ulyanovsk/center/48.58216,54.374511/zoom/16/routeTab/rsType/bus/to/48.58216,54.374511╎Лидер, торговый центр?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=route">Найти проезд до Лидер, торговый центр</a></div><script charset="utf-8" src="https://widgets.2gis.com/js/DGWidgetLoader.js"></script><script charset="utf-8">new DGWidgetLoader({"width":640,"height":600,"borderColor":"#a3a3a3","pos":{"lat":54.374511,"lon":48.58216,"zoom":16},"opt":{"city":"ulyanovsk"},"org":[{"id":"7741090140528062"}]});</script><noscript style="color:#c00;font-size:16px;font-weight:bold;">Виджет карты использует JavaScript. Включите его в настройках вашего браузера.</noscript>
                 </div>
             </div>
         </div>
